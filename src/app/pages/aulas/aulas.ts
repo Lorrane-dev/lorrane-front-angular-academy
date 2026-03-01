@@ -30,6 +30,7 @@ interface Plano {
   cargaHoraria: string;
   nivel: string;
   destaque: boolean;
+  premium?: boolean;
   modulos: Modulo[];
   resultadoFinal: string;
 }
@@ -120,13 +121,13 @@ export class AulasComponent implements OnInit, OnDestroy {
     {
       titulo: 'Formação Full Stack & Cloud Completa',
       descricao:
-        'A formação mais completa do portfólio. Você percorre do front-end ao back-end, mobile, infraestrutura em nuvem, análise de dados e IA aplicada, exatamente como funciona em projetos reais de alta escala. No front-end você escolhe entre React ou Angular. Se optar pelo Angular, o módulo de mobile será com Flutter. Cada módulo entrega um projeto para o seu portfólio.',
-      totalModulos: 10,
-      cargaHoraria: '~200 horas',
+        'A formação mais completa e estruturante do portfólio. Percorre front-end, back-end, mobile, cloud, dados, IA e arquitetura de sistemas. No front-end você escolhe entre React ou Angular. Se optar por Angular, o módulo de mobile será com Flutter. Cada módulo entrega um projeto real para o portfólio.',
+      totalModulos: 16,
+      cargaHoraria: '~400 horas',
       nivel: 'Iniciante ao avançado',
       destaque: true,
       resultadoFinal:
-        'Portfólio completo com 10+ projetos reais. Domínio de front-end, back-end, mobile, cloud, dados e IA. Perfil competitivo para vagas júnior-pleno e renda como freelancer. Certificado de conclusão.',
+        'Ao concluir a formação completa, você domina múltiplas stacks e desenvolve maturidade técnica para atuar com autonomia, visão arquitetural e tomada de decisão estratégica. Portfólio com 16+ projetos reais cobrindo front-end, back-end, mobile, cloud, dados, IA, arquitetura, testes, segurança e observabilidade.',
       modulos: [
         {
           titulo: 'Fundamentos & Ambiente Profissional',
@@ -269,18 +270,114 @@ export class AulasComponent implements OnInit, OnDestroy {
           projeto: 'Assistente inteligente integrado à aplicação full stack desenvolvida no curso.',
           aberto: false,
         },
+        {
+          titulo: 'Arquitetura de Software Avançada',
+          objetivo:
+            'Projetar sistemas escaláveis e resilientes com padrões arquiteturais usados em empresas de grande porte.',
+          aulas: [
+            'Domain-Driven Design (DDD): bounded contexts, aggregates e value objects',
+            'CQRS: separação de comandos e consultas para escalabilidade',
+            'Event-driven architecture: eventos de domínio e de integração',
+            'Microsserviços vs Monolito: trade-offs e estratégias de migração',
+            'Saga Pattern: consistência eventual em transações distribuídas',
+            'Idempotência e resiliência: circuit breaker, retry e bulkhead',
+          ],
+          projeto:
+            'Refatoração de um módulo da aplicação full stack para arquitetura DDD com eventos de domínio.',
+          aberto: false,
+        },
+        {
+          titulo: 'Testes, Qualidade e Code Review',
+          objetivo:
+            'Construir suítes de testes abrangentes e estabelecer uma cultura de qualidade contínua.',
+          aulas: [
+            'TDD e BDD: desenvolvimento guiado por testes e comportamento',
+            'Testes E2E com Cypress e Playwright: fluxos críticos do usuário',
+            'Testes de contrato com Pact: garantindo compatibilidade entre serviços',
+            'Testes de carga e stress com k6: limites de performance em produção',
+            'Testcontainers: testes de integração com infraestrutura real',
+            'Code review profissional: métricas de qualidade, coverage e code smells',
+          ],
+          projeto:
+            'Suíte de testes completa (unitários, integração, E2E e carga) para a API desenvolvida no curso.',
+          aberto: false,
+        },
+        {
+          titulo: 'Segurança de Aplicações',
+          objetivo:
+            'Identificar e corrigir vulnerabilidades seguindo os padrões OWASP e boas práticas de segurança enterprise.',
+          aulas: [
+            'OWASP Top 10: as vulnerabilidades mais críticas e como mitigá-las',
+            'XSS, CSRF e CORS: exploração, proteção e configuração segura',
+            'Rate limiting, secure headers e HTTPS obrigatório',
+            'Logs de auditoria e rastreabilidade de ações do usuário',
+            'Secrets Manager: gestão segura de credenciais na cloud',
+            'Segurança em pipelines CI/CD: SAST, DAST e dependency scanning',
+          ],
+          projeto:
+            'Auditoria de segurança da aplicação full stack com relatório de vulnerabilidades e plano de correção.',
+          aberto: false,
+        },
+        {
+          titulo: 'Observabilidade e SRE',
+          objetivo:
+            'Monitorar, rastrear e diagnosticar problemas em sistemas distribuídos em produção com as ferramentas do mercado.',
+          aulas: [
+            'Os três pilares da observabilidade: logs, métricas e traces',
+            'OpenTelemetry: instrumentação agnóstica de plataforma',
+            'Prometheus: coleta de métricas, alertas e regras de gravação',
+            'Grafana: dashboards operacionais e visualização de dados',
+            'Distributed tracing: rastreamento de requisições entre microsserviços',
+            'SLIs, SLOs e SLAs: práticas de Site Reliability Engineering',
+          ],
+          projeto:
+            'Stack de observabilidade completa (Prometheus + Grafana + OpenTelemetry) integrada à aplicação.',
+          aberto: false,
+        },
+        {
+          titulo: 'UX/UI para Desenvolvedores',
+          objetivo:
+            'Criar interfaces que funcionam para o usuário com base em fundamentos de UX, design thinking e acessibilidade.',
+          aulas: [
+            'Fundamentos de UX: jornada do usuário e heurísticas de usabilidade de Nielsen',
+            'Design thinking: empatia, definição, ideação e prototipação',
+            'Wireframes e prototipação navegável com Figma',
+            'Acessibilidade WCAG: diretrizes e implementação prática',
+            'Design systems: criação de tokens, componentes e documentação',
+            'UI moderna: tipografia, cor, espaçamento e hierarquia visual',
+          ],
+          projeto:
+            'Protótipo navegável no Figma com design system documentado para a aplicação do curso.',
+          aberto: false,
+        },
+        {
+          titulo: 'Mercado, Carreira e Empregabilidade',
+          objetivo:
+            'Posicionar-se estrategicamente no mercado de tecnologia para vagas CLT, PJ ou como freelancer.',
+          aulas: [
+            'Como montar um currículo tech que passa pelo ATS',
+            'LinkedIn estratégico: perfil completo, network e produção de conteúdo',
+            'Simulação de entrevista técnica: live coding e soft skills',
+            'System Design Interview: como responder perguntas de arquitetura',
+            'Negociação salarial: diferenças CLT vs PJ e como negociar',
+            'Freelancing: precificação, contratos e posicionamento de marca pessoal',
+          ],
+          projeto:
+            'Portfólio publicado, currículo otimizado, LinkedIn revisado e simulação de entrevista gravada.',
+          aberto: false,
+        },
       ],
     },
     {
       titulo: 'Front-end Essencial',
       descricao:
         'Domine a construção de interfaces modernas, responsivas e acessíveis. Do HTML semântico ao TypeScript, você escolhe o framework: React ou Angular. Sai pronto para criar experiências visuais de alto nível.',
-      totalModulos: 5,
-      cargaHoraria: '~60 horas',
+      totalModulos: 6,
+      cargaHoraria: '~75 horas',
       nivel: 'Iniciante ao intermediário',
       destaque: false,
       resultadoFinal:
-        'Portfólio com projetos front-end completos, dominando HTML, CSS, JavaScript, TypeScript e o framework de sua escolha (React ou Angular). Pronto para vagas de front-end júnior e pleno.',
+        'Portfólio com projetos front-end completos, dominando HTML, CSS, JavaScript, TypeScript, React ou Angular, UX/UI e acessibilidade. Pronto para vagas de front-end júnior e pleno.',
       modulos: [
         {
           titulo: 'Fundamentos da Web',
@@ -352,18 +449,35 @@ export class AulasComponent implements OnInit, OnDestroy {
           projeto: 'Sistema de gestão (CRUD) com Angular, consumindo uma API REST.',
           aberto: false,
         },
+        {
+          titulo: 'UX/UI Profissional e Acessibilidade',
+          objetivo:
+            'Projetar e implementar interfaces centradas no usuário com Figma, design systems, heurísticas de usabilidade e padrões de acessibilidade.',
+          aulas: [
+            'Fundamentos de UX: pesquisa, jornada do usuário e personas',
+            'Heurísticas de Nielsen e avaliação de usabilidade',
+            'Design thinking: empatia, definição, ideação e prototipação',
+            'Wireframes e protótipos navegáveis com Figma',
+            'Acessibilidade WCAG 2.1: critérios, testes e implementação',
+            'Design systems: tokens de design, componentes e documentação viva',
+            'UI moderna: tipografia, paleta de cores, espaçamento e hierarquia',
+          ],
+          projeto:
+            'Redesign com protótipo Figma, design system documentado e auditoria de acessibilidade do projeto do curso.',
+          aberto: false,
+        },
       ],
     },
     {
       titulo: 'Back-end & APIs Profissional',
       descricao:
         'Aprenda a construir o coração das aplicações: APIs robustas, seguras e escaláveis. Domine Java, Node.js, bancos de dados e os padrões utilizados em grandes empresas.',
-      totalModulos: 5,
-      cargaHoraria: '~70 horas',
+      totalModulos: 7,
+      cargaHoraria: '~90 horas',
       nivel: 'Iniciante ao intermediário',
       destaque: false,
       resultadoFinal:
-        'Portfólio com APIs REST completas em Java e Node.js, documentadas com Swagger, integradas a bancos relacionais e não relacionais. Perfil pronto para back-end júnior e pleno.',
+        'Portfólio com APIs REST completas em Java e Node.js, documentadas com Swagger, cobertas por testes automatizados, seguras e com arquitetura orientada a domínio. Perfil pronto para back-end júnior e pleno.',
       modulos: [
         {
           titulo: 'Lógica de Programação e Fundamentos',
@@ -433,6 +547,38 @@ export class AulasComponent implements OnInit, OnDestroy {
             'Migrations, seeds e gerenciamento de esquemas',
           ],
           projeto: 'Modelagem e implementação completa do banco de dados da API anterior.',
+          aberto: false,
+        },
+        {
+          titulo: 'Arquitetura Avançada de Back-end',
+          objetivo:
+            'Projetar APIs e sistemas back-end com os padrões arquiteturais exigidos em empresas de médio e grande porte.',
+          aulas: [
+            'Clean Architecture aprofundada: camadas, dependências e regras',
+            'Domain-Driven Design (DDD): entities, aggregates e repositórios',
+            'CQRS: separação de leitura e escrita para escalabilidade',
+            'Event-driven: publicação e consumo de eventos com Kafka ou RabbitMQ',
+            'Microsserviços: decomposição, comunicação e deploy independente',
+            'Saga Pattern e idempotência em transações distribuídas',
+          ],
+          projeto:
+            'Refatoração da API do curso para Clean Architecture com DDD e comunicação por eventos.',
+          aberto: false,
+        },
+        {
+          titulo: 'Testes Avançados e Segurança de APIs',
+          objetivo:
+            'Garantir qualidade e segurança das APIs com testes automatizados abrangentes e proteção contra as principais vulnerabilidades.',
+          aulas: [
+            'TDD e BDD com JUnit, Mockito e Cucumber',
+            'Testes E2E de APIs com Playwright API e RestAssured',
+            'Testes de contrato com Pact: compatibilidade entre serviços',
+            'Testes de carga com k6: identificando gargalos em produção',
+            'OWASP Top 10 para APIs: SQL Injection, Auth quebrada e exposição de dados',
+            'Rate limiting, secure headers, logs de auditoria e gestão de secrets',
+          ],
+          projeto:
+            'Suíte completa de testes (unitários, integração, contrato e carga) e relatório de vulnerabilidades da API.',
           aberto: false,
         },
       ],
@@ -622,12 +768,12 @@ export class AulasComponent implements OnInit, OnDestroy {
       titulo: 'Cloud & AWS na Prática',
       descricao:
         'Aprenda a colocar aplicações em produção na AWS com segurança, escalabilidade e boas práticas de DevOps. Do deploy manual à infraestrutura como código, você passa a entender como o mercado lida com cloud.',
-      totalModulos: 4,
-      cargaHoraria: '~45 horas',
+      totalModulos: 6,
+      cargaHoraria: '~65 horas',
       nivel: 'Intermediário',
       destaque: false,
       resultadoFinal:
-        'Portfólio com aplicação completa deployada na AWS usando Terraform e pipeline CI/CD automatizado. Pronto para vagas que exigem conhecimento em cloud e DevOps.',
+        'Portfólio com aplicação deployada na AWS com Terraform, pipeline CI/CD, stack de observabilidade completa (Prometheus + Grafana + OpenTelemetry) e práticas de Cloud avançado. Pronto para vagas de DevOps e SRE júnior.',
       modulos: [
         {
           titulo: 'Fundamentos de Cloud e AWS',
@@ -682,6 +828,178 @@ export class AulasComponent implements OnInit, OnDestroy {
             'Estratégias de deploy: blue/green e rolling update',
           ],
           projeto: 'Pipeline CI/CD completo que faz deploy automático na AWS a cada push.',
+          aberto: false,
+        },
+        {
+          titulo: 'Cloud Avançado e Kubernetes',
+          objetivo:
+            'Dominar recursos avançados de infraestrutura AWS e os fundamentos de orquestração de containers com Kubernetes.',
+          aulas: [
+            'VPC: subnetting, route tables, NAT Gateway e peering',
+            'Load Balancer: ALB, NLB e target groups para alta disponibilidade',
+            'Auto Scaling: políticas, métricas e configuração de grupos',
+            'Kubernetes: pods, deployments, services e namespaces',
+            'Secrets Manager e Parameter Store: gestão segura de configurações',
+            'Otimização de custos AWS: Reserved Instances, Savings Plans e rightsizing',
+          ],
+          projeto:
+            'Infraestrutura com VPC customizada, Auto Scaling e cluster Kubernetes básico provisionado via Terraform.',
+          aberto: false,
+        },
+        {
+          titulo: 'Observabilidade com OpenTelemetry e Grafana',
+          objetivo:
+            'Implementar observabilidade completa em aplicações cloud com os padrões open source do mercado.',
+          aulas: [
+            'Os três pilares da observabilidade: logs, métricas e traces',
+            'OpenTelemetry: instrumentação automática e manual de aplicações',
+            'Prometheus: coleta de métricas, alertas e regras de agregação',
+            'Grafana: criação de dashboards e alertas operacionais',
+            'Distributed tracing: rastreamento ponta a ponta entre serviços',
+            'SLIs, SLOs e error budgets: práticas de SRE na AWS',
+          ],
+          projeto:
+            'Stack de observabilidade completa integrada à aplicação na AWS com alertas configurados.',
+          aberto: false,
+        },
+      ],
+    },
+    {
+      titulo: 'Engenharia de Software & Arquitetura de Sistemas',
+      descricao:
+        'A formação mais estratégica do portfólio. Parte do zero e avança até o nível arquitetural, cobrindo UX estratégico, modelagem avançada, engenharia de requisitos, metodologias ágeis, padrões de projeto, system design e governança enterprise. Equivalente a uma graduação moderna em Engenharia de Software, com foco prático e projetos reais em cada módulo. Para quem quer atuar como Analista de Sistemas, Engenheiro de Software, Tech Lead ou Arquiteto Júnior em empresas de médio e grande porte.',
+      totalModulos: 7,
+      cargaHoraria: '~110 horas',
+      nivel: 'Iniciante estruturado ao arquitetural',
+      destaque: false,
+      premium: true,
+      resultadoFinal:
+        'Portfólio com 7 projetos entregáveis: protótipo Figma validado, modelagem arquitetural completa, SRS com BDD, board ágil configurado, sistema refatorado com padrões de projeto, desenho de system design com C4 e repositório de governança com RFC e ADRs. Perfil pronto para Analista de Sistemas, Engenheiro de Software, Tech Lead e Arquiteto Júnior.',
+      modulos: [
+        {
+          titulo: 'UX Estratégico & Product Thinking',
+          objetivo:
+            'Desenvolver visão de produto centrada no usuário antes de qualquer linha de código, aplicando UX estratégico, design thinking e prototipação validada.',
+          aulas: [
+            'Fundamentos de UX: o que é experiência do usuário e por que importa no desenvolvimento',
+            'Design Thinking: empatia, definição, ideação, prototipação e teste',
+            'Personas e jornada do usuário: mapeamento de comportamentos e pontos de dor',
+            'Wireframes e prototipação navegável com Figma: do rascunho ao protótipo clicável',
+            'Heurísticas de Nielsen: 10 princípios e como aplicá-los em auditorias',
+            'Testes de usabilidade: moderados, não moderados e análise de resultados',
+            'Acessibilidade WCAG 2.1: critérios de sucesso e implementação prática',
+            'UX para produtos B2B vs B2C: diferenças estratégicas de design e fluxo',
+          ],
+          projeto:
+            'Prototipação navegável validada no Figma de um sistema real, com personas, jornada do usuário, wireframes e relatório de teste de usabilidade.',
+          aberto: false,
+        },
+        {
+          titulo: 'Modelagem Avançada de Sistemas',
+          objetivo:
+            'Comunicar arquitetura, comportamento e processos de sistemas com precisão, usando as notações padronizadas do mercado enterprise.',
+          aulas: [
+            'UML completa: Classes, Sequência, Componentes, Implantação e Casos de Uso',
+            'Modelagem C4: contexto, container, componente e código com visão progressiva',
+            'BPMN: modelagem de processos de negócio com notação padronizada',
+            'Integração entre UML, C4 e BPMN: quando e como usar cada notação',
+            'Modelagem de APIs com OpenAPI/Swagger: contratos antes da implementação',
+            'Diagramas com mensageria assíncrona: filas, tópicos e eventos de integração',
+            'Event Storming: descoberta colaborativa de domínio com stakeholders',
+            'DDD estratégico: bounded contexts, context maps e linguagem ubíqua',
+          ],
+          projeto:
+            'Modelagem completa de um sistema real: diagramas UML, C4, BPMN, contrato OpenAPI e event storming documentados em repositório público.',
+          aberto: false,
+        },
+        {
+          titulo: 'Engenharia de Requisitos & Product Discovery',
+          objetivo:
+            'Descobrir, estruturar e validar requisitos conectando visão de negócio, UX e especificação técnica com as técnicas mais usadas em times de produto.',
+          aulas: [
+            'Tipos de requisitos: funcionais, não funcionais, de domínio e restrições',
+            'Técnicas de levantamento: entrevistas, workshops, prototipação e shadowing',
+            'Personas aplicadas a requisitos: conectando UX e especificação técnica',
+            'Jornada do usuário como fonte de requisitos: do comportamento ao critério de aceite',
+            'User Stories e BDD: Given/When/Then e critérios de aceitação testáveis',
+            'Priorização estratégica: MoSCoW, RICE e matriz de valor vs esforço',
+            'Documento SRS: estrutura, rastreabilidade e gestão de mudanças',
+            'Métricas de validação de requisitos: como saber se o requisito está bom',
+          ],
+          projeto:
+            'SRS completo com personas, jornada do usuário, user stories com BDD, casos de uso e matriz de priorização RICE do sistema prototipado no módulo anterior.',
+          aberto: false,
+        },
+        {
+          titulo: 'Metodologias Ágeis & Gestão de Produto',
+          objetivo:
+            'Aplicar metodologias ágeis com profundidade real, indo além do básico para dominar gestão de produto, métricas e frameworks de escala.',
+          aulas: [
+            'Scrum aprofundado: papéis, eventos, artefatos e disfunções comuns',
+            'Kanban: fluxo, WIP limits, lead time, cycle time e CFD',
+            'OKRs: alinhamento estratégico entre produto e negócio',
+            'Discovery vs Delivery: Dual Track Agile e o papel do Analista',
+            'SAFe: escalabilidade ágil em times e organizações grandes',
+            'Métricas avançadas: burn-down, burn-up, velocity e throughput',
+            'Refinamento de backlog: épicos, features, stories e critérios de pronto',
+            'Ferramentas: Jira, Confluence e Notion para gestão de times tech',
+          ],
+          projeto:
+            'Projeto configurado no Jira com épicos, sprints, definition of done, OKRs e dashboard de métricas de velocity e CFD.',
+          aberto: false,
+        },
+        {
+          titulo: 'Engenharia de Software & Padrões de Projeto',
+          objetivo:
+            'Aplicar os princípios e padrões de engenharia de software para construir sistemas extensíveis, testáveis e alinhados com as exigências do mercado enterprise.',
+          aulas: [
+            'SOLID aprofundado: exemplos reais, antipadrões comuns e como identificá-los',
+            'GRASP: General Responsibility Assignment Software Patterns na prática',
+            'Padrões criacionais: Factory Method, Abstract Factory, Builder e Prototype',
+            'Padrões estruturais: Adapter, Decorator, Facade, Proxy e Composite',
+            'Padrões comportamentais: Strategy, Observer, Command e Chain of Responsibility',
+            'Arquitetura Hexagonal (Ports & Adapters): isolando domínio de infraestrutura',
+            'Coesão e acoplamento na prática: métricas e refatoração orientada',
+            'Anti-patterns clássicos e refatoração orientada a testes',
+          ],
+          projeto:
+            'Refatoração completa de um sistema legado: SOLID aplicado, padrões de projeto implementados, arquitetura hexagonal e testes de regressão garantindo a refatoração.',
+          aberto: false,
+        },
+        {
+          titulo: 'System Design & Arquitetura Escalável',
+          objetivo:
+            'Projetar sistemas distribuídos escaláveis, tomando decisões arquiteturais justificadas com base em trade-offs reais de mercado.',
+          aulas: [
+            'Fundamentos de escalabilidade: vertical, horizontal e estratégias de crescimento',
+            'CAP Theorem: consistência, disponibilidade e tolerância a partições',
+            'Estratégias de cache: in-memory, distribuído, CDN e invalidação',
+            'Load balancing: algoritmos, health checks e sessões distribuídas',
+            'Mensageria e filas: Kafka, RabbitMQ e padrões de comunicação assíncrona',
+            'Banco relacional vs NoSQL: critérios de escolha e trade-offs',
+            'Introdução a microsserviços: decomposição, comunicação e deployment',
+            'Como responder uma System Design Interview: método e exemplos reais',
+          ],
+          projeto:
+            'Desenho arquitetural completo de um sistema escalável documentado com C4, decisões técnicas justificadas em ADRs e diagrama de mensageria.',
+          aberto: false,
+        },
+        {
+          titulo: 'Governança, Documentação e Compliance Enterprise',
+          objetivo:
+            'Produzir documentação técnica de alto nível e adotar práticas de governança, risco e compliance exigidas em empresas de médio e grande porte.',
+          aulas: [
+            'Documentação técnica: README profissional, docs de API e wikis de arquitetura',
+            'RFC (Request for Comments): como propor e avaliar mudanças técnicas em equipe',
+            'ADR (Architecture Decision Record): registro auditável de decisões arquiteturais',
+            'SLA, SLO e SLI: definindo e monitorando acordos de serviço',
+            'Gestão de risco técnico: identificação, classificação e plano de mitigação',
+            'Auditoria de código: critérios, checklists e cultura de qualidade',
+            'LGPD e compliance técnico: coleta de dados, consentimento e privacidade by design',
+            'Boas práticas enterprise: onboarding técnico, padronização e governança de times',
+          ],
+          projeto:
+            'Repositório de governança com RFC, ADRs, análise de risco técnico, mapa de compliance LGPD e documentação arquitetural do sistema desenvolvido ao longo da formação.',
           aberto: false,
         },
       ],
@@ -781,7 +1099,7 @@ export class AulasComponent implements OnInit, OnDestroy {
         'Projeto colaborativo em equipe',
         'Dinâmica com revisão de código',
         'Gravação de todas as aulas',
-        'Certificado de conclusão de módulo',
+        'Feedback de código em grupo',
       ],
     },
   ];

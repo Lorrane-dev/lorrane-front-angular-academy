@@ -24,6 +24,7 @@ export class CabecalhoComponent implements OnInit {
   linksNavegacao: LinkNavegacao[] = [
     { href: '#formacoes', rotulo: 'Formações' },
     { href: '#tecnologias', rotulo: 'Tecnologias' },
+    { href: '#ecossistema', rotulo: 'Ecossistema' },
     { href: '#valores', rotulo: 'Investimento' },
   ];
 
