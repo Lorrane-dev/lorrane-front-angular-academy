@@ -99,11 +99,11 @@ $texto-sutil: rgba(255, 255, 255, 0.5);
 // ============================================================
 .secao-hero {
   position: relative;
-  padding: 9rem 0 7rem;
+  padding: 6rem 0 5rem;
   overflow: hidden;
 
   @media (min-width: 768px) {
-    padding: 11rem 0 9rem;
+    padding: 7rem 0 6rem;
   }
 }
 
@@ -124,12 +124,15 @@ $texto-sutil: rgba(255, 255, 255, 0.5);
 }
 
 .titulo-hero {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
   line-height: 1.15;
-  margin: 0.5rem 0 1.5rem;
+  margin: 0.5rem 0 1.25rem;
   color: $texto;
 
+  @media (min-width: 480px) {
+    font-size: 2.5rem;
+  }
   @media (min-width: 768px) {
     font-size: 3.5rem;
   }
@@ -139,11 +142,16 @@ $texto-sutil: rgba(255, 255, 255, 0.5);
 }
 
 .descricao-hero {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: $texto-suave;
   line-height: 1.75;
   max-width: 700px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.75rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+    margin: 0 auto 2rem;
+  }
 }
 
 .destaque-branco {
@@ -152,24 +160,42 @@ $texto-sutil: rgba(255, 255, 255, 0.5);
 }
 
 .hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    max-width: none;
+    margin-bottom: 2.5rem;
+  }
 }
 
 .badge-hero {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
   background: rgba(127, 77, 255, 0.12);
   border: 1px solid rgba(127, 77, 255, 0.3);
   color: rgba(255, 255, 255, 0.85);
-  padding: 0.4rem 0.9rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 2rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
+  text-align: center;
+
+  @media (min-width: 600px) {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.9rem;
+  }
 }
 
 .badge-icone {
@@ -180,9 +206,18 @@ $texto-sutil: rgba(255, 255, 255, 0.5);
 
 .hero-acoes {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  padding: 0 1rem;
+
+  @media (min-width: 480px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    gap: 1rem;
+  }
 }
 
 .botao-primario {
@@ -669,6 +704,38 @@ $texto-sutil: rgba(255, 255, 255, 0.5);
 
   &:last-child {
     border-bottom: none;
+  }
+}
+
+.botao-ver-modulos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 2rem 0;
+  padding: 0.875rem 1.5rem;
+  background: $fundo-card;
+  border: 1px solid $borda-card;
+  border-radius: 0.5rem;
+  color: $texto;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    transition: transform 0.25s ease;
+
+    &.rotacionado {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover {
+    border-color: $borda-hover;
+    transform: translateY(-1px);
   }
 }
 

@@ -2,7 +2,7 @@
   <app-cabecalho></app-cabecalho>
 
   <!-- ===================== HERO ===================== -->
-  <section class="secao-hero" #heroRef>
+  <section id="home" class="secao-hero" #heroRef>
     <div class="container">
       <div class="hero-conteudo" [class.visivel]="heroVisivel">
         <p class="rotulo-secao">Desenvolvimento Full Stack, Mobile & Cloud</p>
@@ -11,11 +11,10 @@
           <span class="texto-gradiente">atua no mercado</span>
         </h1>
         <p class="descricao-hero">
-          Sou Engenheira de Software Full Stack atuando no
-          <strong class="destaque-branco">maior banco da América Latina</strong>, com participação
-          em projetos de alta complexidade e grande escala. Aqui você aprende o que o mercado de
-          fato exige, combinando teoria estruturada, prática guiada e projetos reais desde a
-          primeira aula.
+          Ofereço aulas de Desenvolvimento Full Stack e Mobile, do nível iniciante ao avançado, com
+          opções individuais e em grupo. As aulas combinam teoria e prática desde o início, com
+          aplicação imediata. O objetivo é que você desenvolva autonomia técnica e esteja preparado
+          para aplicar para vagas em poucos meses, dependendo da sua dedicação e ritmo.
         </p>
         <div class="hero-badges">
           <span class="badge-hero">
@@ -154,8 +153,10 @@
           </div>
           <h3 class="titulo-etapa">Projeto Real</h3>
           <p class="descricao-etapa">
-            Ao final de cada módulo, você entrega um projeto estilo mini TCC: uma aplicação
-            funcional, documentada e pronta para o seu portfólio profissional.
+            Ao final de cada módulo, você entrega um projeto no formato mini TCC. Esse é o
+            <strong>método de avaliação do aprendizado</strong> e, ao mesmo tempo, a
+            <strong>geração do seu portfólio profissional</strong>: uma aplicação funcional,
+            documentada e pronta para mostrar ao mercado.
           </p>
         </div>
       </div>
@@ -168,9 +169,9 @@
           </svg>
         </div>
         <p>
-          <strong>Resultado comprovado:</strong> Alunos aplicando para vagas no mercado de
-          tecnologia em poucos meses — com portfólio real, confiança técnica e posicionamento
-          estratégico.
+          <strong>O que você vai conquistar:</strong> Portfólio real, confiança técnica e
+          posicionamento estratégico para aplicar para vagas no mercado de tecnologia em poucos
+          meses, dependendo da sua dedicação e ritmo.
         </p>
       </div>
     </div>
@@ -260,8 +261,9 @@
           Escolha sua <span class="texto-gradiente">trilha de aprendizado</span>
         </h2>
         <p class="descricao-secao">
-          Cada formação é estruturada em módulos progressivos, com objetivos claros e projeto
-          entregável ao final. Do iniciante ao especialista.
+          Cada aluno escolhe a trilha que deseja seguir. As formações são estruturadas em módulos
+          progressivos, com objetivos claros e projeto entregável ao final. Do iniciante ao
+          avançado.
         </p>
       </div>
 
@@ -325,8 +327,21 @@
             </div>
           </div>
 
+          <button class="botao-ver-modulos" (click)="alternarPlano(pi)">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              [class.rotacionado]="planosExpandidos[pi]"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+            {{ planosExpandidos[pi] ? 'Ocultar módulos' : 'Ver módulos' }}
+          </button>
+
           <!-- MÓDULOS -->
-          <div class="lista-modulos">
+          <div class="lista-modulos" *ngIf="planosExpandidos[pi]">
             <div class="modulo" *ngFor="let modulo of plano.modulos; let mi = index">
               <div
                 class="modulo-cabecalho"
@@ -384,7 +399,7 @@
           </div>
 
           <!-- RESULTADO FINAL DO PLANO -->
-          <div class="plano-resultado-final">
+          <div class="plano-resultado-final" *ngIf="planosExpandidos[pi]">
             <div class="resultado-final-icone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="8" r="6" />
