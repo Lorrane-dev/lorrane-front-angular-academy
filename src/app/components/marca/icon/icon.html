@@ -1,0 +1,30 @@
+<div class="icone-container" [style.width]="tamanho" [style.height]="tamanho">
+  <div class="brilho-fundo"></div>
+  <div class="icone-principal">
+    <div class="icone-background">
+      <svg viewBox="0 0 24 24" fill="none" class="icone-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gradienteIcone" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="hsl(270, 90%, 50%)" />
+            <stop offset="100%" stop-color="hsl(217, 91%, 60%)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M7 4V17C7 18.1046 7.89543 19 9 19H18"
+          stroke="url(#gradienteIcone)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M14 14L18 10M18 10V14M18 10H14"
+          stroke="url(#gradienteIcone)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <circle cx="7" cy="4" r="1.5" fill="url(#gradienteIcone)" />
+      </svg>
+    </div>
+  </div>
+</div>

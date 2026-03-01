@@ -1,0 +1,536 @@
+<main class="pagina-aulas">
+  <app-cabecalho></app-cabecalho>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="secao-hero" #heroRef>
+    <div class="container">
+      <div class="hero-conteudo" [class.visivel]="heroVisivel">
+        <p class="rotulo-secao">Desenvolvimento Full Stack, Mobile & Cloud</p>
+        <h1 class="titulo-hero">
+          Aprenda com quem
+          <span class="texto-gradiente">atua no mercado</span>
+        </h1>
+        <p class="descricao-hero">
+          Sou Engenheira de Software Full Stack atuando no
+          <strong class="destaque-branco">maior banco da América Latina</strong>, com participação
+          em projetos de alta complexidade e grande escala. Aqui você aprende o que o mercado de
+          fato exige, combinando teoria estruturada, prática guiada e projetos reais desde a
+          primeira aula.
+        </p>
+        <div class="hero-badges">
+          <span class="badge-hero">
+            <svg
+              class="badge-icone"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+            Iniciante ao avançado
+          </span>
+          <span class="badge-hero">
+            <svg
+              class="badge-icone"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            Online via Zoom ou Meet
+          </span>
+          <span class="badge-hero">
+            <svg
+              class="badge-icone"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+            Individual ou em grupo
+          </span>
+          <span class="badge-hero">
+            <svg
+              class="badge-icone"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            Portfólio real garantido
+          </span>
+        </div>
+        <div class="hero-acoes">
+          <a
+            href="https://wa.me/5511989595100"
+            target="_blank"
+            rel="noopener"
+            class="botao-primario"
+          >
+            Quero começar agora
+          </a>
+          <a href="#formacoes" class="botao-secundario"> Ver formações </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-decorativo">
+      <div class="circulo-bg circulo-1"></div>
+      <div class="circulo-bg circulo-2"></div>
+    </div>
+  </section>
+
+  <!-- ===================== METODOLOGIA ===================== -->
+  <section class="secao-metodologia" #metodologiaRef>
+    <div class="container">
+      <div class="cabecalho-secao" [class.visivel]="metodologiaVisivel">
+        <p class="rotulo-secao">Como funciona</p>
+        <h2 class="titulo-secao">
+          A metodologia que <span class="texto-gradiente">funciona</span>
+        </h2>
+        <p class="descricao-secao">
+          Cada aula é estruturada em três pilares que garantem aprendizado real e aplicação
+          imediata.
+        </p>
+      </div>
+
+      <div class="grade-metodologia" [class.visivel]="metodologiaVisivel">
+        <div class="card-metodologia destaque-gradiente">
+          <div class="cabecalho-etapa">
+            <div class="numero-etapa">01</div>
+            <div class="icone-metodologia">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="titulo-etapa">Teoria Estruturada</h3>
+          <p class="descricao-etapa">
+            Conceitos fundamentais explicados de forma clara, objetiva e progressiva. Você entende o
+            <em>porquê</em> antes de escrever a primeira linha de código.
+          </p>
+        </div>
+
+        <div class="card-metodologia">
+          <div class="cabecalho-etapa">
+            <div class="numero-etapa">02</div>
+            <div class="icone-metodologia">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="titulo-etapa">Prática Guiada</h3>
+          <p class="descricao-etapa">
+            Exercícios práticos com acompanhamento em tempo real. Você codifica junto comigo, comete
+            erros, aprende a depurar e consolida cada conceito na prática.
+          </p>
+        </div>
+
+        <div class="card-metodologia">
+          <div class="cabecalho-etapa">
+            <div class="numero-etapa">03</div>
+            <div class="icone-metodologia">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="titulo-etapa">Projeto Real</h3>
+          <p class="descricao-etapa">
+            Ao final de cada módulo, você entrega um projeto estilo mini TCC: uma aplicação
+            funcional, documentada e pronta para o seu portfólio profissional.
+          </p>
+        </div>
+      </div>
+
+      <div class="banner-resultado" [class.visivel]="metodologiaVisivel">
+        <div class="banner-icone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+            <polyline points="17 6 23 6 23 12" />
+          </svg>
+        </div>
+        <p>
+          <strong>Resultado comprovado:</strong> Alunos aplicando para vagas no mercado de
+          tecnologia em poucos meses — com portfólio real, confiança técnica e posicionamento
+          estratégico.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PÚBLICO-ALVO ===================== -->
+  <section class="secao-publico" #publicoRef>
+    <div class="container">
+      <div class="cabecalho-secao" [class.visivel]="publicoVisivel">
+        <p class="rotulo-secao">Para quem é</p>
+        <h2 class="titulo-secao">
+          Esta formação foi feita <span class="texto-gradiente">para você</span>
+        </h2>
+      </div>
+
+      <div class="grade-publico" [class.visivel]="publicoVisivel">
+        <div
+          class="card-publico"
+          *ngFor="let perfil of publicoAlvo; let i = index"
+          [style.animation-delay]="i * 0.1 + 's'"
+        >
+          <div class="brilho-hover"></div>
+          <div class="publico-icone">
+            <ng-container [ngSwitch]="perfil.icone">
+              <svg
+                *ngSwitchCase="'user-plus'"
+                class="svg-icone"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="8.5" cy="7" r="4" />
+                <line x1="20" y1="8" x2="20" y2="14" />
+                <line x1="23" y1="11" x2="17" y2="11" />
+              </svg>
+              <svg
+                *ngSwitchCase="'refresh-cw'"
+                class="svg-icone"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="23 4 23 10 17 10" />
+                <polyline points="1 20 1 14 7 14" />
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+              </svg>
+              <svg
+                *ngSwitchCase="'trending-up'"
+                class="svg-icone"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                <polyline points="17 6 23 6 23 12" />
+              </svg>
+              <svg
+                *ngSwitchCase="'briefcase'"
+                class="svg-icone"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+            </ng-container>
+          </div>
+          <h3 class="publico-titulo">{{ perfil.titulo }}</h3>
+          <p class="publico-descricao">{{ perfil.descricao }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FORMAÇÕES ===================== -->
+  <section id="formacoes" class="secao-formacoes" #formacoesRef>
+    <div class="container">
+      <div class="cabecalho-secao" [class.visivel]="formacoesVisivel">
+        <p class="rotulo-secao">Planos de formação</p>
+        <h2 class="titulo-secao">
+          Escolha sua <span class="texto-gradiente">trilha de aprendizado</span>
+        </h2>
+        <p class="descricao-secao">
+          Cada formação é estruturada em módulos progressivos, com objetivos claros e projeto
+          entregável ao final. Do iniciante ao especialista.
+        </p>
+      </div>
+
+      <!-- -------------------- PLANOS -------------------- -->
+      <div class="lista-planos" [class.visivel]="formacoesVisivel">
+        <!-- PLANO 1: FRONT-END -->
+        <div
+          class="card-plano"
+          *ngFor="let plano of planos; let pi = index"
+          [class.plano-destaque]="plano.destaque"
+          [style.animation-delay]="pi * 0.15 + 's'"
+        >
+          <div class="brilho-hover"></div>
+          <div class="plano-topo">
+            <div class="plano-badge" *ngIf="plano.destaque">Mais completo</div>
+            <div class="plano-numero">Formação {{ pi + 1 | number: '2.0' }}</div>
+            <h3 class="plano-titulo">{{ plano.titulo }}</h3>
+            <p class="plano-descricao">{{ plano.descricao }}</p>
+            <div class="plano-meta">
+              <span class="meta-item">
+                <svg
+                  class="meta-icone"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                {{ plano.totalModulos }} módulos
+              </span>
+              <span class="meta-item">
+                <svg
+                  class="meta-icone"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                {{ plano.cargaHoraria }}
+              </span>
+              <span class="meta-item">
+                <svg
+                  class="meta-icone"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                {{ plano.nivel }}
+              </span>
+            </div>
+          </div>
+
+          <!-- MÓDULOS -->
+          <div class="lista-modulos">
+            <div class="modulo" *ngFor="let modulo of plano.modulos; let mi = index">
+              <div
+                class="modulo-cabecalho"
+                (click)="alternarModulo(pi, mi)"
+                [class.aberto]="modulo.aberto"
+              >
+                <div class="modulo-esquerda">
+                  <span class="modulo-numero">{{ (mi + 1).toString().padStart(2, '0') }}</span>
+                  <span class="modulo-titulo">{{ modulo.titulo }}</span>
+                </div>
+                <svg
+                  class="modulo-seta"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  [class.rotacionado]="modulo.aberto"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
+              <div class="modulo-corpo" [class.aberto]="modulo.aberto">
+                <div class="modulo-objetivo">
+                  <span class="objetivo-rotulo">Objetivo:</span> {{ modulo.objetivo }}
+                </div>
+                <ul class="lista-aulas">
+                  <li *ngFor="let aula of modulo.aulas" class="item-aula">
+                    <svg
+                      class="aula-icone"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    {{ aula }}
+                  </li>
+                </ul>
+                <div class="modulo-resultado">
+                  <svg
+                    class="resultado-icone"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <span><strong>Projeto entregável:</strong> {{ modulo.projeto }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RESULTADO FINAL DO PLANO -->
+          <div class="plano-resultado-final">
+            <div class="resultado-final-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+            </div>
+            <div>
+              <p class="resultado-final-rotulo">Resultado ao concluir</p>
+              <p class="resultado-final-texto">{{ plano.resultadoFinal }}</p>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/5511989595100"
+            target="_blank"
+            rel="noopener"
+            class="botao-plano"
+            [class.botao-plano-destaque]="plano.destaque"
+          >
+            Quero esta formação
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TECNOLOGIAS ===================== -->
+  <section id="tecnologias" class="secao-tecnologias" #tecnologiasRef>
+    <div class="container">
+      <div class="cabecalho-secao" [class.visivel]="tecnologiasVisivel">
+        <p class="rotulo-secao">Stack coberta</p>
+        <h2 class="titulo-secao">
+          Tecnologias que o <span class="texto-gradiente">mercado exige</span>
+        </h2>
+      </div>
+      <div class="grade-tecnologias" [class.visivel]="tecnologiasVisivel">
+        <div
+          class="tag-tecnologia"
+          *ngFor="let tec of tecnologias; let ti = index"
+          [style.animation-delay]="ti * 0.04 + 's'"
+        >
+          {{ tec }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VALORES ===================== -->
+  <section id="valores" class="secao-valores" #valoresRef>
+    <div class="container">
+      <div class="cabecalho-secao" [class.visivel]="valoresVisivel">
+        <p class="rotulo-secao">Investimento</p>
+        <h2 class="titulo-secao">Tipos de aula <span class="texto-gradiente">e valores</span></h2>
+        <p class="descricao-secao">
+          Formatos flexíveis para diferentes objetivos e orçamentos. Todas as opções incluem
+          exercícios para casa, materiais complementares e suporte entre aulas.
+        </p>
+      </div>
+
+      <div class="grade-valores" [class.visivel]="valoresVisivel">
+        <div
+          class="card-valor"
+          *ngFor="let opcao of opcoesPrecificacao; let vi = index"
+          [class.card-valor-destaque]="opcao.destaque"
+          [style.animation-delay]="vi * 0.1 + 's'"
+        >
+          <div class="brilho-hover"></div>
+          <div class="valor-badge" *ngIf="opcao.badge">{{ opcao.badge }}</div>
+          <div class="valor-tipo">{{ opcao.tipo }}</div>
+          <div class="valor-preco">
+            <span class="preco-prefixo">R$</span>
+            <span class="preco-numero">{{ opcao.preco }}</span>
+            <span class="preco-periodo">/ aula</span>
+          </div>
+          <p class="valor-descricao">{{ opcao.descricao }}</p>
+          <ul class="valor-itens">
+            <li *ngFor="let item of opcao.itens">
+              <svg
+                class="check-icone"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              {{ item }}
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/5511989595100"
+            target="_blank"
+            rel="noopener"
+            class="botao-valor"
+            [class.botao-valor-destaque]="opcao.destaque"
+          >
+            Começar agora
+          </a>
+        </div>
+      </div>
+
+      <div class="aviso-valores" [class.visivel]="valoresVisivel">
+        <svg
+          class="aviso-icone"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+        <p>
+          Os valores de grupo aplicam-se a turmas com <strong>mínimo de 10 alunos</strong>. Para
+          empresas, escolas e bootcamps, entre em contato para condições especiais.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section class="secao-cta" #ctaRef>
+    <div class="container">
+      <div class="cta-conteudo" [class.visivel]="ctaVisivel">
+        <p class="rotulo-secao">Pronto para avançar?</p>
+        <h2 class="titulo-secao">
+          Dê o primeiro passo rumo à sua <span class="texto-gradiente">carreira em tecnologia</span>
+        </h2>
+        <p class="descricao-secao">
+          Vagas limitadas por turma para garantir atenção individualizada. Entre em contato agora e
+          saiba qual formação é ideal para o seu momento.
+        </p>
+        <a href="https://wa.me/5511989595100" target="_blank" rel="noopener" class="botao-cta">
+          Falar com a Lorrane
+        </a>
+      </div>
+    </div>
+    <div class="cta-decorativo">
+      <div class="circulo-bg circulo-1"></div>
+      <div class="circulo-bg circulo-2"></div>
+    </div>
+  </section>
+
+  <app-rodape></app-rodape>
+  <app-botao-whatsapp></app-botao-whatsapp>
+  <app-whatsapp-lead-modal></app-whatsapp-lead-modal>
+  <app-whatsapp-lead-popup></app-whatsapp-lead-popup>
+</main>

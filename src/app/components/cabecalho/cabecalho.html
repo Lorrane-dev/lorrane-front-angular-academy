@@ -1,0 +1,90 @@
+<header class="cabecalho-fixo" [class.rolou]="rolou">
+  <div class="container">
+    <nav class="navegacao">
+      <!-- Lorrane.dev logo -->
+      <app-logo></app-logo>
+
+      <!-- navegacao desktop -->
+      <ul class="links-desktop">
+        <li *ngFor="let link of linksNavegacao">
+          <a
+            (click)="navegarPara(link.href)"
+            class="link-navegacao"
+            [attr.aria-label]="'navegar para seção ' + link.rotulo"
+          >
+            {{ link.rotulo }}
+            <span class="linha-hover"></span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- botao fale comigo desktop -->
+      <a
+        href="https://wa.me/5511989595100"
+        target="_blank"
+        rel="noopener"
+        class="botao-fale-comigo desktop-only"
+        aria-label="Quero começar"
+      >
+        Quero começar
+      </a>
+
+      <!-- botao menu mobile -->
+      <button
+        class="botao-menu-mobile"
+        (click)="alternarMenuMobile()"
+        [attr.aria-expanded]="menuMobilAberto"
+        aria-label="abrir menu de navegação"
+      >
+        <span class="icone-hamburger" [class.ativo]="menuMobilAberto">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <!-- menu mobile -->
+      <div class="menu-mobile" [class.aberto]="menuMobilAberto">
+        <div class="cabecalho-menu-mobile">
+          <app-logo></app-logo>
+          <button class="botao-fechar-menu" (click)="fecharMenuMobile()" aria-label="fechar menu">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <ul class="links-mobile">
+          <li *ngFor="let link of linksNavegacao">
+            <a (click)="navegarPara(link.href)" class="link-mobile">
+              {{ link.rotulo }}
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/5511989595100"
+              target="_blank"
+              rel="noopener"
+              class="botao-fale-comigo-mobile"
+              >Quero começar</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- overlay para fechar menu mobile -->
+  <div class="overlay-mobile" [class.visivel]="menuMobilAberto" (click)="fecharMenuMobile()"></div>
+</header>

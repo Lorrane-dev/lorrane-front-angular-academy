@@ -1,0 +1,48 @@
+<section id="portfolio" class="secao-portfolio" #secaoRef>
+  <div class="container">
+    <!-- cabecalho da secao -->
+    <div class="cabecalho-secao" [class.visivel]="estaVisivel">
+      <p class="rotulo-secao">Portfólio</p>
+      <h2 class="titulo-secao">Projetos que <span class="texto-gradiente">transformam</span></h2>
+      <p class="descricao-secao">Veja como ajudei negócios a crescerem com soluções digitais.</p>
+    </div>
+
+    <!-- grade de portfolio -->
+    <div class="grade-portfolio" [class.visivel]="estaVisivel">
+      <div
+        *ngFor="let item of itensPortfolio; let i = index"
+        class="card-portfolio"
+        [style.animation-delay]="i * 0.1 + 's'"
+        (mouseenter)="aoPassarMouse(i)"
+        (mouseleave)="aoSairMouse()"
+      >
+        <!-- imagem -->
+        <img [src]="item.imagem" [alt]="item.titulo" class="imagem-portfolio" />
+
+        <!-- overlay -->
+        <div class="overlay-portfolio"></div>
+
+        <!-- conteudo -->
+        <div class="conteudo-portfolio" [class.visivel]="indiceHover === i">
+          <p class="categoria-portfolio">
+            {{ item.categoria }}
+          </p>
+          <h3 class="titulo-portfolio">
+            {{ item.titulo }}
+            <svg
+              class="icone-link"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  &:hover .logo-wrapper {
+    transform: scale(1.02);
+    transition: transform 0.2s;
+  }
+
+  &.sem-link {
+    pointer-events: none;
+  }
+}
+
+.logo-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-completa {
+  position: relative;
+  height: 48px; // Altura fixa para o cabeçalho
+  width: auto;
+  z-index: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(127, 0, 255, 0.2));
+}

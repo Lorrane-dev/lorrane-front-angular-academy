@@ -1,0 +1,88 @@
+.msg-animada-whats {
+  position: absolute;
+  right: 110%;
+  bottom: 0.2rem;
+  background: #222;
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 500;
+  padding: 0.45rem 1.1rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  animation: subir-msg-whats 2.2s 0.1s forwards;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .msg-animada-whats {
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 0.92rem;
+    padding: 0.38rem 0.7rem;
+  }
+}
+
+@keyframes subir-msg-whats {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+}
+.botao-whatsapp-fixo {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  animation: aparecerBotao 0.6s ease 1s both;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  .icone-whatsapp {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+@keyframes aparecerBotao {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

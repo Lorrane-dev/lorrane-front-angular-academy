@@ -1,0 +1,39 @@
+<section id="contato" class="secao-contato" #secaoRef>
+  <div class="container">
+    <div class="conteudo-centralizado" [class.visivel]="estaVisivel">
+      <!-- icone -->
+      <div class="container-icone-principal">
+        <svg
+          class="icone-principal"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M12 3L13.5 8.5L19 10L13.5 11.5L12 17L10.5 11.5L5 10L10.5 8.5L12 3Z" />
+          <path d="M19 15L20 17L22 18L20 19L19 21L18 19L16 18L18 17L19 15Z" />
+          <path d="M5 17L5.5 18.5L7 19L5.5 19.5L5 21L4.5 19.5L3 19L4.5 18.5L5 17Z" />
+        </svg>
+      </div>
+
+      <!-- cabecalho -->
+      <p class="rotulo-secao">Vamos começar</p>
+      <h2 class="titulo-secao">Pronto para <span class="texto-gradiente">crescer</span>?</h2>
+      <p class="descricao-secao">
+        Me conte sobre seu negócio pelo WhatsApp e vamos juntos criar a solução perfeita para você
+        conquistar mais clientes.
+      </p>
+
+      <!-- botao principal -->
+      <a
+        [href]="urlWhatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="botao-principal"
+        (click)="aoClicarWhatsapp($event)"
+      >
+        Quero um orçamento
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+.icone-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brilho-fundo {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, hsl(270, 90%, 50%), hsl(217, 91%, 60%));
+  opacity: 0.2;
+  filter: blur(6px);
+  z-index: 0;
+}
+
+.icone-principal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, hsl(270, 90%, 50%), hsl(217, 91%, 60%));
+  padding: 1px;
+  z-index: 1;
+}
+
+.icone-background {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  background: #18181b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone-svg {
+  width: 60%;
+  height: 60%;
+  display: block;
+}

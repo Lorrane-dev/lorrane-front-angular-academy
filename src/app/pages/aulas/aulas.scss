@@ -1,0 +1,1237 @@
+// ============================================================
+// Variáveis de design (espelha a identidade visual do site)
+// ============================================================
+$cor-primaria: hsl(270, 90%, 50%);
+$cor-secundaria: hsl(217, 91%, 60%);
+$gradiente: linear-gradient(135deg, $cor-primaria 0%, $cor-secundaria 100%);
+$fundo: #000;
+$fundo-card: rgba(0, 0, 0, 0.4);
+$borda-card: rgba(255, 255, 255, 0.1);
+$borda-hover: rgba(127, 77, 255, 0.5);
+$texto: rgba(255, 255, 255, 0.9);
+$texto-suave: rgba(255, 255, 255, 0.7);
+$texto-sutil: rgba(255, 255, 255, 0.5);
+
+// ============================================================
+// Página
+// ============================================================
+.pagina-aulas {
+  min-height: 100vh;
+  background: $fundo;
+  color: $texto;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+// ============================================================
+// Utilitários reutilizáveis
+// ============================================================
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.rotulo-secao {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: $cor-primaria;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.titulo-secao {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $texto;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+  }
+}
+
+.texto-gradiente {
+  background: $gradiente;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.descricao-secao {
+  font-size: 1.125rem;
+  color: $texto-suave;
+  max-width: 640px;
+  line-height: 1.7;
+  margin: 0 auto;
+}
+
+.cabecalho-secao {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+
+  &.visivel {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.brilho-hover {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(127, 77, 255, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+// ============================================================
+// HERO
+// ============================================================
+.secao-hero {
+  position: relative;
+  padding: 9rem 0 7rem;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    padding: 11rem 0 9rem;
+  }
+}
+
+.hero-conteudo {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+
+  &.visivel {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titulo-hero {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0.5rem 0 1.5rem;
+  color: $texto;
+
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
+}
+
+.descricao-hero {
+  font-size: 1.125rem;
+  color: $texto-suave;
+  line-height: 1.75;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.destaque-branco {
+  color: #fff;
+  font-weight: 700;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.badge-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(127, 77, 255, 0.12);
+  border: 1px solid rgba(127, 77, 255, 0.3);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.4rem 0.9rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.badge-icone {
+  width: 1rem;
+  height: 1rem;
+  color: $cor-primaria;
+}
+
+.hero-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.botao-primario {
+  background: $gradiente;
+  color: #fff;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+.botao-secundario {
+  background: transparent;
+  color: $texto;
+  border: 1px solid $borda-card;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+
+  &:hover {
+    border-color: $borda-hover;
+    transform: translateY(-2px);
+  }
+}
+
+.hero-decorativo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  .circulo-bg {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+
+    &.circulo-1 {
+      width: 500px;
+      height: 500px;
+      top: -150px;
+      left: -150px;
+      background: rgba(127, 77, 255, 0.12);
+    }
+    &.circulo-2 {
+      width: 400px;
+      height: 400px;
+      bottom: -100px;
+      right: -100px;
+      background: rgba(59, 130, 246, 0.1);
+    }
+  }
+}
+
+// ============================================================
+// METODOLOGIA  — fundo claro (contraste com hero escuro)
+// ============================================================
+.secao-metodologia {
+  padding: 6rem 0 8rem;
+  background: rgb(205, 213, 226);
+
+  .rotulo-secao {
+    color: hsl(270, 90%, 35%);
+    text-shadow: none;
+  }
+
+  .titulo-secao {
+    color: #0f0f1a;
+    .texto-gradiente {
+      background: linear-gradient(135deg, hsl(270, 90%, 38%) 0%, hsl(217, 91%, 42%) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .descricao-secao {
+    color: #1e1e3a;
+    font-weight: 500;
+  }
+
+  .card-metodologia {
+    background: linear-gradient(
+      135deg,
+      rgba(8, 10, 24, 0.97) 0%,
+      rgba(12, 18, 40, 0.97) 60%,
+      rgba(24, 48, 120, 0.5) 100%
+    );
+    border-color: rgba(127, 77, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  }
+
+  .banner-resultado {
+    background: rgba(8, 10, 24, 0.9);
+    border-color: rgba(127, 77, 255, 0.5);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+
+    p {
+      color: rgba(255, 255, 255, 0.85);
+    }
+  }
+}
+
+.grade-metodologia {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease 0.15s;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &.visivel {
+    opacity: 1;
+    transform: translateY(0);
+
+    .card-metodologia {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.card-metodologia {
+  position: relative;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: $fundo-card;
+  border: 1px solid $borda-card;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+
+  &:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  &:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  &:hover {
+    border-color: $borda-hover;
+  }
+
+  &.destaque-gradiente {
+    border-color: rgba(127, 77, 255, 0.4);
+    background: linear-gradient(135deg, rgba(127, 77, 255, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
+  }
+}
+
+.numero-etapa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.5rem;
+  height: 3.5rem;
+  padding: 0 0.75rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, hsl(270, 90%, 50%) 0%, hsl(217, 91%, 55%) 100%);
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+  letter-spacing: 0.05em;
+  box-shadow:
+    0 0 16px rgba(127, 77, 255, 0.55),
+    0 2px 8px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.cabecalho-etapa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.icone-metodologia {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: rgba(127, 77, 255, 0.15);
+  border: 1px solid rgba(127, 77, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    color: $cor-primaria;
+  }
+}
+
+.titulo-etapa {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $texto;
+  margin: 0 0 0.75rem;
+}
+
+.descricao-etapa {
+  font-size: 0.95rem;
+  color: $texto-suave;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.banner-resultado {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(127, 77, 255, 0.1) 0%, rgba(59, 130, 246, 0.08) 100%);
+  border: 1px solid rgba(127, 77, 255, 0.3);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.6s ease 0.35s;
+
+  &.visivel {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    color: $texto-suave;
+    line-height: 1.6;
+  }
+}
+
+.banner-icone {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: $gradiente;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    color: #fff;
+  }
+}
+
+// ============================================================
+// PÚBLICO-ALVO  — escuro profundo (azul-noite)
+// ============================================================
+.secao-publico {
+  padding: 6rem 0 8rem;
+  background: #050515;
+}
+
+.grade-publico {
+  display: grid;
+  gap: 1.25rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease 0.15s;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &.visivel {
+    opacity: 1;
+    transform: translateY(0);
+
+    .card-publico {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.card-publico {
+  position: relative;
+  padding: 1.75rem;
+  border-radius: 1rem;
+  background: $fundo-card;
+  border: 1px solid $borda-card;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  overflow: hidden;
+
+  &:hover {
+    border-color: $borda-hover;
+    .brilho-hover {
+      opacity: 1;
+    }
+  }
+}
+
+.publico-icone {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: $gradiente;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  .svg-icone {
+    width: 1.4rem;
+    height: 1.4rem;
+    color: #fff;
+  }
+}
+
+.publico-titulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $texto;
+  margin: 0 0 0.5rem;
+}
+
+.publico-descricao {
+  font-size: 0.875rem;
+  color: $texto-suave;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// ============================================================
+// FORMAÇÕES / PLANOS  — preto puro
+// ============================================================
+.secao-formacoes {
+  padding: 6rem 0 8rem;
+  background: #000;
+}
+
+.lista-planos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease 0.15s;
+
+  &.visivel {
+    opacity: 1;
+    transform: translateY(0);
+
+    .card-plano {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.card-plano {
+  position: relative;
+  border-radius: 1.25rem;
+  background: $fundo-card;
+  border: 1px solid $borda-card;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.55s ease;
+
+  &:hover {
+    border-color: $borda-hover;
+    .brilho-hover {
+      opacity: 1;
+    }
+  }
+
+  &.plano-destaque {
+    border-color: rgba(127, 77, 255, 0.5);
+    background: linear-gradient(160deg, rgba(127, 77, 255, 0.06) 0%, $fundo-card 40%);
+  }
+}
+
+.plano-topo {
+  padding: 2rem 2rem 0;
+}
+
+.plano-badge {
+  display: inline-block;
+  background: $gradiente;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+
+.plano-numero {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: $cor-primaria;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.plano-titulo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: $texto;
+  margin: 0 0 0.75rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.9rem;
+  }
+}
+
+.plano-descricao {
+  font-size: 1rem;
+  color: $texto-suave;
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+  max-width: 700px;
+}
+
+.plano-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: $texto-suave;
+  font-weight: 500;
+}
+
+.meta-icone {
+  width: 1rem;
+  height: 1rem;
+  color: $cor-primaria;
+  flex-shrink: 0;
+}
+
+// ---------- Módulos (accordion) ----------
+.lista-modulos {
+  border-top: 1px solid $borda-card;
+}
+
+.modulo {
+  border-bottom: 1px solid $borda-card;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.modulo-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba(127, 77, 255, 0.04);
+  }
+
+  &.aberto {
+    .modulo-numero {
+      color: $cor-primaria;
+    }
+  }
+}
+
+.modulo-esquerda {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.modulo-numero {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: rgba(127, 77, 255, 0.35);
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.2s;
+  min-width: 2.2rem;
+}
+
+.modulo-titulo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $texto;
+
+  @media (min-width: 768px) {
+    font-size: 1.05rem;
+  }
+}
+
+.modulo-seta {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: $texto-sutil;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+
+  &.rotacionado {
+    transform: rotate(180deg);
+  }
+}
+
+.modulo-corpo {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.3s ease;
+  opacity: 0;
+  padding: 0 2rem;
+
+  &.aberto {
+    max-height: 1200px;
+    opacity: 1;
+    padding: 0 2rem 1.5rem;
+  }
+}
+
+.modulo-objetivo {
+  font-size: 0.9rem;
+  color: $texto-suave;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  background: rgba(127, 77, 255, 0.06);
+  border-left: 3px solid $cor-primaria;
+  border-radius: 0 0.3rem 0.3rem 0;
+  line-height: 1.55;
+}
+
+.objetivo-rotulo {
+  font-weight: 700;
+  color: $cor-primaria;
+}
+
+.lista-aulas {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item-aula {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: $texto-suave;
+  line-height: 1.5;
+}
+
+.aula-icone {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: $cor-primaria;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.modulo-resultado {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  color: $texto-suave;
+  line-height: 1.55;
+  padding: 0.75rem 1rem;
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 0.5rem;
+}
+
+.resultado-icone {
+  width: 1rem;
+  height: 1rem;
+  color: $cor-secundaria;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+// ---------- Resultado final do plano ----------
+.plano-resultado-final {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0 2rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(127, 77, 255, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border: 1px solid rgba(127, 77, 255, 0.25);
+  border-radius: 0.75rem;
+}
+
+.resultado-final-icone {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: $gradiente;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: #fff;
+  }
+}
+
+.resultado-final-rotulo {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $cor-primaria;
+  font-weight: 700;
+  margin: 0 0 0.3rem;
+}
+
+.resultado-final-texto {
+  font-size: 0.95rem;
+  color: $texto-suave;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.botao-plano {
+  display: block;
+  margin: 1.5rem 2rem 2rem;
+  padding: 0.875rem 1.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: $fundo-card;
+  color: $texto;
+  border: 1px solid $borda-card;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: $borda-hover;
+    transform: translateY(-1px);
+  }
+  &.botao-plano-destaque {
+    background: $gradiente;
+    border-color: transparent;
+    color: #fff;
+  }
+}
+
+// ============================================================
+// TECNOLOGIAS  — fundo claro (espelha ritmicidade do institucional)
+// ============================================================
+.secao-tecnologias {
+  padding: 6rem 0 8rem;
+  background: rgb(205, 213, 226);
+
+  .rotulo-secao {
+    color: hsl(270, 90%, 35%);
+  }
+
+  .titulo-secao {
+    color: #0f0f1a;
+    .texto-gradiente {
+      background: linear-gradient(135deg, hsl(270, 90%, 38%) 0%, hsl(217, 91%, 42%) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .tag-tecnologia {
+    background: rgba(8, 10, 24, 0.88);
+    border-color: rgba(127, 77, 255, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      border-color: rgba(127, 77, 255, 0.7);
+      color: #fff;
+      background: linear-gradient(135deg, hsl(270, 90%, 38%) 0%, hsl(217, 91%, 42%) 100%);
+      box-shadow: 0 4px 16px rgba(127, 77, 255, 0.35);
+    }
+  }
+}
+
+.grade-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.6s ease 0.15s;
+
+  &.visivel {
+    opacity: 1;
+    transform: translateY(0);
+
+    .tag-tecnologia {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.tag-tecnologia {
+  background: $fundo-card;
+  border: 1px solid $borda-card;
+  color: $texto-suave;
+  padding: 0.45rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.4s ease;
+  cursor: default;
+
+  &:hover {
+    border-color: $borda-hover;
+    color: $texto;
+    background: rgba(127, 77, 255, 0.08);
+  }
+}
+
+// ============================================================
+// VALORES  — azul-noite profundo
+// ============================================================
+.secao-valores {
+  padding: 6rem 0 8rem;
+  background: #050515;
+}
+
+.grade-valores {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease 0.15s;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &.visivel {
+    opacity: 1;
+    transform: translateY(0);
+
+    .card-valor {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.card-valor {
+  position: relative;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: $fundo-card;
+  border: 1px solid $borda-card;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  overflow: hidden;
+
+  &:hover {
+    border-color: $borda-hover;
+    .brilho-hover {
+      opacity: 1;
+    }
+  }
+
+  &.card-valor-destaque {
+    border-color: rgba(127, 77, 255, 0.5);
+    background: linear-gradient(160deg, rgba(127, 77, 255, 0.08) 0%, $fundo-card 50%);
+  }
+}
+
+.valor-badge {
+  display: inline-block;
+  background: $gradiente;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2rem;
+  margin-bottom: 0.75rem;
+  align-self: flex-start;
+}
+
+.valor-tipo {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $cor-primaria;
+  margin-bottom: 0.75rem;
+}
+
+.valor-preco {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.preco-prefixo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $texto-suave;
+}
+
+.preco-numero {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: $texto;
+  line-height: 1;
+}
+
+.preco-periodo {
+  font-size: 0.9rem;
+  color: $texto-sutil;
+}
+
+.valor-descricao {
+  font-size: 0.875rem;
+  color: $texto-suave;
+  line-height: 1.55;
+  margin: 0 0 1.25rem;
+}
+
+.valor-itens {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: $texto-suave;
+    line-height: 1.45;
+  }
+}
+
+.check-icone {
+  width: 1rem;
+  height: 1rem;
+  color: $cor-primaria;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.botao-valor {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid $borda-card;
+  color: $texto;
+  transition: all 0.2s;
+  margin-top: auto;
+
+  &:hover {
+    border-color: $borda-hover;
+    transform: translateY(-1px);
+  }
+  &.botao-valor-destaque {
+    background: $gradiente;
+    border-color: transparent;
+    color: #fff;
+  }
+}
+
+.aviso-valores {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid $borda-card;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.5s ease 0.3s;
+
+  &.visivel {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: $texto-suave;
+    line-height: 1.55;
+  }
+}
+
+.aviso-icone {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: $cor-primaria;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+// ============================================================
+// CTA FINAL
+// ============================================================
+.secao-cta {
+  position: relative;
+  padding: 8rem 0 10rem;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 250, 252, 0.1) 0%,
+    rgba(248, 250, 252, 0.05) 100%
+  );
+}
+
+.cta-conteudo {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+
+  &.visivel {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .descricao-secao {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.botao-cta {
+  display: inline-block;
+  background: $gradiente;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+.cta-decorativo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  .circulo-bg {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+
+    &.circulo-1 {
+      width: 600px;
+      height: 600px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(127, 77, 255, 0.1);
+    }
+    &.circulo-2 {
+      width: 300px;
+      height: 300px;
+      bottom: 0;
+      right: 10%;
+      background: rgba(59, 130, 246, 0.08);
+    }
+  }
+}

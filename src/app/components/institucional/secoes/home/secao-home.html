@@ -1,0 +1,70 @@
+<section id="home" class="secao-home">
+  <!-- imagem de fundo -->
+  <div class="fundo-home"></div>
+
+  <!-- overlay para melhor contraste do texto -->
+  <div class="overlay-gradiente"></div>
+
+  <!-- conteudo -->
+  <div class="container-conteudo">
+    <div class="conteudo-central">
+      <!-- titulo principal -->
+      <h1 class="titulo-principal">
+        <span class="texto-normal"><span class="texto-destaque">Seu negócio</span> no</span>
+        <br />
+        <span class="texto-gradiente">Próximo nível digital</span>
+      </h1>
+
+      <!-- frase de transformação direta -->
+      <span class="texto-destaque frase-transformacao-direta">
+        Ajudo empresas a atrair clientes e vender 24h por dia com soluções digitais sob medida.
+      </span>
+
+      <!-- subtitulo -->
+      <p class="subtitulo">
+        Transformo sua ideia em sites, apps e marcas que atraem clientes e fazem seu negócio crescer
+        de verdade.
+      </p>
+
+      <!-- botao chamada para acao -->
+      <div class="container-cta">
+        <button
+          type="button"
+          class="botao-cta"
+          aria-label="ir para a seção de contato"
+          (click)="navegarPara('#contato')"
+        >
+          Quero um orçamento
+        </button>
+        <button
+          type="button"
+          (click)="navegarPara('#sobre')"
+          class="seta-rolagem seta-cta"
+          aria-label="rolar para próxima seção"
+        >
+          <svg
+            class="icone-seta"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 13L12 18L17 13"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M7 6L12 11L17 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

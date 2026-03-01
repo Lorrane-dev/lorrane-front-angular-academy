@@ -1,0 +1,87 @@
+<section id="diferenciais" class="secao-diferenciais" #secaoRef>
+  <div class="container">
+    <!-- cabecalho da secao -->
+    <div class="cabecalho-secao" [class.visivel]="estaVisivel">
+      <p class="rotulo-secao">Por que eu?</p>
+      <h2 class="titulo-secao">
+        Diferente de <span class="texto-gradiente">tudo</span> que você já viu
+      </h2>
+    </div>
+
+    <!-- grade de diferenciais -->
+    <div class="grade-diferenciais" [class.visivel]="estaVisivel">
+      <div
+        *ngFor="let diferencial of diferenciais; let i = index"
+        class="card-diferencial"
+        [style.animation-delay]="i * 0.15 + 's'"
+      >
+        <!-- icone -->
+        <div class="container-icone">
+          <ng-container [ngSwitch]="diferencial.icone">
+            <svg
+              *ngSwitchCase="'target'"
+              class="icone-diferencial"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+            <svg
+              *ngSwitchCase="'sparkles'"
+              class="icone-diferencial"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 3L13.5 8.5L19 10L13.5 11.5L12 17L10.5 11.5L5 10L10.5 8.5L12 3Z" />
+              <path d="M19 15L20 17L22 18L20 19L19 21L18 19L16 18L18 17L19 15Z" />
+              <path d="M5 17L5.5 18.5L7 19L5.5 19.5L5 21L4.5 19.5L3 19L4.5 18.5L5 17Z" />
+            </svg>
+            <svg
+              *ngSwitchCase="'building'"
+              class="icone-diferencial"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18" />
+              <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
+              <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
+              <path d="M10 6h4" />
+              <path d="M10 10h4" />
+              <path d="M10 14h4" />
+              <path d="M10 18h4" />
+            </svg>
+            <svg
+              *ngSwitchCase="'award'"
+              class="icone-diferencial"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="8" r="6" />
+              <path d="M15.477 12.89L17 22L12 19L7 22L8.523 12.89" />
+            </svg>
+          </ng-container>
+        </div>
+
+        <!-- conteudo -->
+        <div class="conteudo-diferencial">
+          <h3 class="titulo-diferencial">
+            {{ diferencial.titulo }}
+          </h3>
+          <p class="descricao-diferencial">
+            {{ diferencial.descricao }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
