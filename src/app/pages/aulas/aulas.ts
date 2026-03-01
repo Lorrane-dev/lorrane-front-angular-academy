@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   ChangeDetectorRef,
   Component,
   ElementRef,
@@ -64,7 +65,7 @@ interface OpcaoPrecificacao {
   templateUrl: './aulas.html',
   styleUrl: './aulas.scss',
 })
-export class AulasComponent implements OnInit, OnDestroy {
+export class AulasComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('heroRef', { static: true }) heroRef!: ElementRef;
   @ViewChild('metodologiaRef', { static: true }) metodologiaRef!: ElementRef;
   @ViewChild('publicoRef', { static: true }) publicoRef!: ElementRef;
@@ -1107,7 +1108,9 @@ export class AulasComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.configurarTitulo();
     this.planosExpandidos = this.planos.map(() => false);
+  }
 
+  ngAfterViewInit() {
     if (!('IntersectionObserver' in window)) {
       this.heroVisivel = true;
       this.metodologiaVisivel = true;
@@ -1116,10 +1119,11 @@ export class AulasComponent implements OnInit, OnDestroy {
       this.tecnologiasVisivel = true;
       this.valoresVisivel = true;
       this.ctaVisivel = true;
+      this.cdr.markForCheck();
       return;
     }
 
-    const opcoes: IntersectionObserverInit = { threshold: 0.1 };
+    const opcoes: IntersectionObserverInit = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     this.observarSecao(this.heroRef, () => (this.heroVisivel = true), opcoes);
     this.observarSecao(this.metodologiaRef, () => (this.metodologiaVisivel = true), opcoes);
     this.observarSecao(this.publicoRef, () => (this.publicoVisivel = true), opcoes);
